@@ -1,8 +1,14 @@
 package br.com.banco.controller;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@RequestMapping("/transferencia")
+@RestController
 public class TransferenciaController {
 
+	
 }
