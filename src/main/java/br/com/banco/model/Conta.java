@@ -12,7 +12,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 public class Conta {
 
@@ -24,5 +23,16 @@ public class Conta {
 	
 	@Column(name="nome_responsavel")
 	private String responsavel;
+
+	public Conta(Long id) {
+		super();
+		this.id = id;
+	}
+
+	public Conta() {
+		super();
+	}
+	
+	
 	
 }

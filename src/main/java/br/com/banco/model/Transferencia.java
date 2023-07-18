@@ -17,7 +17,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 public class Transferencia {
 
@@ -36,7 +35,6 @@ public class Transferencia {
 	@NotNull
 	private String tipo;
 	
-	@NotNull
 	@Column(name="nome_operador_transacao")
 	private String operador;
 	
