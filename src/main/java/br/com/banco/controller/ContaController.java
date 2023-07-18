@@ -3,6 +3,7 @@ package br.com.banco.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RequestMapping("/conta")
 @RestController
+@CrossOrigin(value = "*")
 public class ContaController {
 
 	@Autowired
@@ -25,11 +27,9 @@ public class ContaController {
 	@Autowired
 	private TransferenciaService transferenciaService;
 	
-	
 	@GetMapping("/{id}")
 	public Conta findById(@PathVariable Long id){
-		Conta t = contaService.findById(id);
-		return t;
+		return contaService.findById(id);
 	}
 	
 	@GetMapping("/{idConta}/transferencias")
