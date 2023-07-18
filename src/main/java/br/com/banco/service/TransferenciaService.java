@@ -19,6 +19,11 @@ public class TransferenciaService {
 	private TransferenciaRepository transferenciaRepository;
 	
 	@Transactional
+	public List<Transferencia> findAll(){
+		return transferenciaRepository.findAll();	
+	}
+	
+	@Transactional
 	public List<Transferencia> findByConta(Long idConta){
 		return transferenciaRepository.findByConta(idConta);
 	}
