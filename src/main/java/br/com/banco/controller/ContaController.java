@@ -13,12 +13,15 @@ import br.com.banco.model.Conta;
 import br.com.banco.model.Transferencia;
 import br.com.banco.service.ContaService;
 import br.com.banco.service.TransferenciaService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RequestMapping("/conta")
 @RestController
 @CrossOrigin(value = "*")
+@Api(tags = {"Conta"}, description = "(Recurso para buscar informações relativas a contas cadastradas.)")
 public class ContaController {
 
 	@Autowired
@@ -28,14 +31,15 @@ public class ContaController {
 	private TransferenciaService transferenciaService;
 	
 	@GetMapping("/{id}")
+	@ApiOperation(value = "Busca uma conta a partir do id passado na requisição.")
 	public Conta findById(@PathVariable Long id){
 		return contaService.findById(id);
 	}
 	
 	@GetMapping("/{idConta}/transferencias")
+	@ApiOperation(value = "Busca todas as transferências cadastradas no sistema com o id da conta utiliza na requisição.")
 	public List<Transferencia> findByConta(@PathVariable Long idConta){
-		List<Transferencia> t = transferenciaService.findByConta(idConta);
-		return t;
+		return transferenciaService.findByConta(idConta);
 	}
 
 }
