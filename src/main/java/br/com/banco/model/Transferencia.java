@@ -42,5 +42,18 @@ public class Transferencia {
 	@NotNull
 	@JoinColumn(name="conta_id")
 	private Conta conta;
-	
+
+	public Transferencia(Long id, @NotNull LocalDateTime dataTransferencia, @NotNull double valor, @NotNull String tipo,
+			String operador, @NotNull Conta conta) {
+		this.id = id;
+		this.dataTransferencia = dataTransferencia;
+		this.valor = valor;
+		this.tipo = tipo;
+		this.operador = operador;
+		this.conta = conta;
+	}
+
+	public Transferencia() {
+	}
+
 }

@@ -25,12 +25,14 @@ public class Conta {
 	private String responsavel;
 
 	public Conta(Long id) {
-		super();
 		this.id = id;
 	}
 
+	public Conta(Long id, String responsavel) {
+		this.id = id;
+	}
+	
 	public Conta() {
-		super();
 	}
 	
 	
