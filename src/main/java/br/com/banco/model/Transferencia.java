@@ -1,6 +1,6 @@
 package br.com.banco.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,7 +27,7 @@ public class Transferencia {
 	
 	@NotNull
 	@Column(name="data_transferencia")
-	private LocalDate dataTransferencia;
+	private LocalDateTime dataTransferencia;
 	
 	@NotNull
 	private double valor;
